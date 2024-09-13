@@ -68,10 +68,58 @@ textarea {
 }
 
 button {
-    display: block;
     width: 100%;
+    padding: 14px;
+    background: linear-gradient(120deg, #a18479, #a97746); /* Adds a gradient background */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #573123, #835c35); /* Darker gradient on hover */
+    transform: translateY(-3px); /* Subtle hover effect */
+}
+
+.resume-output {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+.resume-output h2 {
+    margin-bottom: 20px;
+    color: #3e2723;
+    font-size: 2rem;
+}
+
+.resume-output p {
+    margin-bottom: 12px;
+    color: #5d4037;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* For the button container */
+#button {
+    display: flex;
+    flex-direction: column; /* Vertically aligns the buttons */
+    gap: 15px; /* Adds space between the buttons */
+    margin-top: 20px; /* Adds some space from the resume content */
+}
+
+/* Styles for the buttons */
+#button button {
+    display: block;
     padding: 12px;
-    background-color: #6d4c41; 
+    background: linear-gradient(120deg, #a18479, #a97746); /* Adds a gradient background */
     color: white;
     border: none;
     border-radius: 6px;
@@ -80,21 +128,8 @@ button {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-    background-color: #5d4037;
-    transform: translateY(-2px); 
-}
-
-.resume-output {
-    margin-top: 40px;
-}
-
-.resume-output h2 {
-    margin-bottom: 20px;
-    color: #6d4c41; 
-}
-
-.resume-output p {
-    margin-bottom: 20px;
-    color: #8d6e63; 
+/* Hover effect for the gradient buttons */
+#button button:hover {
+    background: linear-gradient(45deg, #573123, #835c35); /* Darker gradient on hover */
+    transform: translateY(-2px); /* Subtle hover animation */
 }

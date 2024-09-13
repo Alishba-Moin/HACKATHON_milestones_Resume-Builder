@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Resume Builder</h1>
+        </header>
+        
+        <section id="form-section">
+            <form id="dynamic-form">
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="username">UserName:</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="phone-no">Phone-No:</label>
+                    <input type="phone-no" id="phone-no" name="phone-no" required>
+                </fieldset>
+
+                <div class="form-group">
+                    <h3>Education</h3>
+                    <label for="education">Education:</label>
+                    <textarea id="education" name="education" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <h3>Work Experience</h3>
+                    <label for="work-experience">Work Experience:</label>
+                    <textarea id="work-experience" name="work-experience" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <h3>Skills</h3>
+                    <label for="skills">Skills:</label>
+                    <textarea id="skills" name="skills" required></textarea>
+                </div>
+
+                <button type="submit">Generate Resume</button>
+            </form>
+        </section>
+
+        <section id="resume-section">
+            <h2>Generated Resume</h2>
+            <div id="resume-output" class="resume-output">
+                <!-- Resume content will be dynamically added here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
