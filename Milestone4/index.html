@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Resume</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Editable Resume</h1>
+
+        <form id="resume-form">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone-no">Phone No:</label>
+                <input type="text" id="phone-no" name="phone-no" required>
+            </fieldset>
+
+            <h3>Education</h3>
+            <label for="education">Education:</label>
+            <textarea id="education" name="education" rows="4" required></textarea>
+
+            <h3>work Experience</h3>
+            <label for="work-experience">Work Experience:</label>
+            <textarea id="work-experience" name="workExperience" rows="4" required></textarea>
+
+            <h3>Skills</h3>
+            <label for="skills">Skills:</label>
+            <textarea id="skills" name="skills" rows="4" required></textarea>
+
+            <button type="submit">Generate Resume</button>
+        </form>
+
+        <div id="resume-output" class="resume-output">
+            <h2>Personal Information: <button class="edit-btn" data-section="personal-info">✏️ Edit</button></h2>
+            <p id="output-personal-info" class="editable-content">Name: [Your Name]<br>Email: [Your Email]<br>Phone No: [Your Phone No]</p>
+
+            <h2>Education: <button class="edit-btn" data-section="education">✏️ Edit</button></h2>
+            <p id="output-education" class="editable-content">[Your Education]</p>
+
+            <h2>Work Experience: <button class="edit-btn" data-section="work-experience">✏️ Edit</button></h2>
+            <p id="output-work-experience" class="editable-content">[Your Work Experience]</p>
+
+            <h2>Skills: <button class="edit-btn" data-section="skills">✏️ Edit</button></h2>
+            <p id="output-skills" class="editable-content">[Your Skills]</p>
+        </div>
+    </div>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
