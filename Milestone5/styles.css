@@ -89,20 +89,20 @@ button:hover {
 .resume-output {
     margin-top: 40px;
     padding: 20px;
-    background-color: #fafafa;
+    background-color: #8d6e63;
     border-radius: 12px;
     border: 1px solid #e0e0e0;
 }
 
 .resume-output h2 {
     margin-bottom: 20px;
-    color: #3e2723;
+    color: #837059;
     font-size: 2rem;
 }
 
 .resume-output p {
     margin-bottom: 12px;
-    color: #5d4037;
+    color: #80584c;
     font-size: 1.1rem;
     line-height: 1.6;
 }

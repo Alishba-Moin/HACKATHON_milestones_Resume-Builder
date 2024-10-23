@@ -1,0 +1,306 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+}
+
+/* Container for the Resume */
+.resume-container {
+    display: flex;
+    background-color: #f0f4f8;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+/* Left Section Styling */
+.left-section {
+    background: linear-gradient(135deg, #0077b6, #ff6bcb);
+    color: #ffffff;
+    width: 280px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Profile Photo Styling */
+.profile-photo img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem; /* Reduced margin */
+}
+
+/* Name, Title, and Animation */
+.name {
+    font-size: 2rem;
+    margin: 0.5rem 0; /* Reduced margin */
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 1px;
+}
+
+.title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem; /* Reduced margin */
+    font-weight: 900;
+    color: #ff9f43;
+    display: flex;
+}
+
+.word {
+    opacity: 0;
+    animation: fadeInOut 1.5s ease forwards infinite;
+    display: inline-block;
+}
+
+.word:nth-child(1) { animation-delay: 0s; }
+.word:nth-child(2) { animation-delay: 0.5s; }
+.word:nth-child(3) { animation-delay: 1s; }
+
+/* Hello Content */
+.hello_content h2 {
+    font-size: 1.4rem; 
+    margin-bottom: 0.5rem; /* Reduced margin */
+    font-weight: bold;
+    color: #444;
+}
+
+.hello_content p {
+    font-size: 0.9rem; 
+    line-height: 1.4; /* Reduced line height for compactness */
+    text-align: justify;
+    margin-bottom: 0.5rem; /* Reduced margin */
+    color: #e6dddd;
+}
+
+/* Contact Information */
+.contact-info {
+    font-size: 0.85rem; /* Font size for contact information */
+    margin: 1rem 0; /* Space around the contact info section */
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for visibility */
+    padding: 1rem; /* Padding around the content */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
+.contact-item {
+    margin-bottom: 0.5rem; /* Space between each contact item */
+}
+
+.contact-item h2 {
+    font-size: 1rem; /* Heading size for contact items */
+    margin: 0 0 0.3rem; /* Space below heading */
+    color: #0077b6; /* Color for headings */
+}
+
+.contact-info p {
+    margin: 0px; /* Remove default margin */
+    color: #333; /* Darker text for readability */
+}
+
+.contact-info i {
+    margin-right: 0.4rem; /* Space between icon and text */
+    color: #0077b6; /* Icon color */
+}
+
+/* Optional: Style for links */
+.contact-info a {
+    color: #0077b6; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.contact-info a:hover {
+    text-decoration: underline; /* Underline on hover for links */
+}
+
+
+/* Languages Section Styling */
+.section.languages {
+    margin: 0px;
+}
+
+.section.languages h2 {
+    font-size: 1rem; /* Heading size */
+}
+
+.languages p {
+    font-size: 18px; /* Font size for the paragraphs */
+    color: #555; /* Dark grey color for text */
+    margin: 3px 0; /* Reduced margin */
+    padding-left: 1px;
+}
+
+
+/* Section Headings */
+.section h2 {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    font-size: 16px;
+    margin: 15px 0 10px;
+    border-radius: 5px;
+}
+
+/* Right Section Styles */
+.right-section {
+    background: linear-gradient(135deg, #0077b6, #ff6bcb);
+    width: 65%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Experience, Education, Skills Styles */
+.section {
+    margin-bottom: 30px;
+}
+
+h2, h3 {
+    color: #444;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Experience Section */
+.experience {
+    margin: 1.5rem 0;
+}
+
+.experience-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.experience-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 0.7rem;
+    width: 30%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.experience-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.experience-item span {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #555; /* Existing color for the job title */
+    margin-bottom: 1rem;
+}
+
+.experience-item small {
+    display: block;
+    color: #555; /* Keeping the small text color as it is */
+    font-size: 0.8rem; 
+}
+
+
+
+/* Education Section */
+.education {
+    margin: 1.5rem 0; /* Reduced margin for a smaller gap between sections */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem; /* Slightly smaller gap between boxes */
+}
+
+.education h2 {
+    font-size: 1rem; /* Reduced font size for the heading */
+    color: #444;
+    width: 100%;
+    margin-bottom: 1rem; /* Added a small margin below the heading */
+}
+
+.education-box {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1rem;
+     display: flex;
+     flex-wrap: wrap;
+    width: 220px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.education-box:hover {
+    transform: translateY(-3px); /* Smaller lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow on hover */
+}
+
+.education-box span {
+    font-weight: bold;
+    font-size: 0.9rem; /* Slightly smaller text */
+    color: #555;
+    padding: 0.2rem;
+}
+
+.education-box small {
+    display: block;
+    color: #777;
+    font-size: 0.8rem; /* Smaller font size for details */
+}
+
+/* Skills Section */
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 110px;
+}
+
+.skill-item img {
+    width: 70px;
+    height: 70px;
+    /* margin-bottom: 0.8rem; */
+}
+
+.skill-item span {
+    font-size: 1rem;
+    color: #444;
+}
+
+
+/* Animation Keyframes */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    50% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+
+@media (max-width: 768px) {
+    .resume-container {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+    .left-section, .right-section {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
