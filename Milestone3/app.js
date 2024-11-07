@@ -76,7 +76,7 @@ function addMoreExperience() {
             <input type="text" class="company" placeholder="Company Name" required>
             <input type="date" class="start-date" required>
             <input type="date" class="end-date">
-            <input class="responsibilities" placeholder="Responsibilities" required></input>
+            <input class="responsibilities" type="text" placeholder="Responsibilities" />
         `;
         experienceFields.appendChild(experienceEntry);
         experienceCount++;
