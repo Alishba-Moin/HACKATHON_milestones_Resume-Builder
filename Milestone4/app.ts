@@ -2,7 +2,7 @@
 const steps = document.querySelectorAll<HTMLElement>('.form-step');
 const nextButtons = document.querySelectorAll<HTMLButtonElement>('.next-btn');
 const prevButtons = document.querySelectorAll<HTMLButtonElement>('.prev-btn');
-const resumeContent = document.getElementById('resume-output') as HTMLElement | null;
+const resumeContent = document.getElementById('resume-content') as HTMLElement | null;
 const resumeDiv = document.getElementById('resume') as HTMLElement | null;
 const submitButton = document.getElementById('submit-btn') as HTMLButtonElement | null;
 const progressSteps = document.querySelectorAll<HTMLElement>('.progress-step');
@@ -137,6 +137,7 @@ function changeProfilePicture(event: Event): void {
         reader.readAsDataURL(file); // Read the file as a data URL
     }
 }
+
 // Function to delete the profile picture (reset to default)
 function deleteProfilePicture(): void {
     if (profilePicture) {

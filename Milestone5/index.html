@@ -8,57 +8,181 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Resume Builder</h1>
-        </header>
-        
-        <section id="form-section">
-            <form id="dynamic-form">
-                <fieldset>
-                    <legend>Personal Information</legend>
-
-                    <label for="username">UserName:</label>
-                    <input type="text" id="username" name="username" required>
-
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="phone-no">Phone-No:</label>
-                    <input type="phone-no" id="phone-no" name="phone-no" required>
-                </fieldset>
-
-                <div class="form-group">
-                    <h3>Education</h3>
-                    <label for="education">Education:</label>
-                    <textarea id="education" name="education" required></textarea>
+        <h1><span>Download</span> Resume <span>Builder</span></h1>
+         <form id="resume-form">
+            
+            <div class="progress-container">
+                <div class="progress-step completed">
+                    <div class="progress-indicator">1</div>
+                    <div class="progress-label">Personal Information</div>
                 </div>
-
-                <div class="form-group">
-                    <h3>Work Experience</h3>
-                    <label for="work-experience">Work Experience:</label>
-                    <textarea id="work-experience" name="work-experience" required></textarea>
+                <div class="progress-step completed">
+                    <div class="progress-indicator">2</div>
+                    <div class="progress-label">Education</div>
                 </div>
-
-                <div class="form-group">
-                    <h3>Skills</h3>
-                    <label for="skills">Skills:</label>
-                    <textarea id="skills" name="skills" required></textarea>
+                <div class="progress-step">
+                    <div class="progress-indicator">3</div>
+                    <div class="progress-label">Work Experience</div>
                 </div>
-
-                <button type="submit">Generate Resume</button>
-            </form>
-        </section>
-
-        <section id="resume-section">
-            <h2>Generated Resume</h2>
-            <div id="resume-output" class="resume-output">
-                <!-- Resume content will be dynamically added here -->
+                <div class="progress-step">
+                    <div class="progress-indicator">4</div>
+                    <div class="progress-label">Skills</div>
+                </div>
             </div>
-        </section>
+            
+
+            <!-- Step 1: Personal Information -->
+<div class="form-step active" id="step-1">
+    <div class="form-container">
+        <!-- Form Info Section for Step 1 -->
+        <div class="form-info" id="form-info-1">
+            <div class="avatar" id="avatar-container">
+                <img id="avatar-image" src="https://img.freepik.com/premium-photo/profile-icon-white-background_941097-161980.jpg?ga=GA1.1.1383932092.1705766465&semt=ais_siglip" alt="Avatar">
+                <h2 id="step-title">Let's get you set up</h2>
+                <p id="step-description">Just a few quick details to begin crafting your personalized resume.</p>
+                <button id="info-btn" class="info-btn">
+                    <span>&#8250;</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Personal Information</h2>
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Name" required>
+
+            <label for="location">Location</label>
+            <input type="text" id="location" placeholder="Location" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Email" required>
+
+            <label for="phone">Mobile</label>
+            <input type="tel" id="phone" placeholder="Phone">
+
+        <div>
+            <label for="profile-picture">Upload Profile Picture:</label>
+            <input type="file" id="profilePicInput" accept="image/*" onchange="previewProfilePicture(event)">
+            <img id="profilePicPreview" src="" alt="Profile Picture Preview" style="display: none; max-width: 100px; margin-top: 10px;">
+        </div>
+        <div class="form-buttons">
+            <button type="button" class="next-btn">Next</button>
+        </div>
     </div>
+</div>
+</div>
+
+            <!-- Step 2: Education -->
+<div class="form-step" id="step-2">
+    <div class="form-container">
+        <!-- Form Info Section for Step 2 -->
+        <div class="form-info" id="form-info-2">
+            <div class="avatar" id="avatar-container">
+                <img id="avatar-image" src="https://img.freepik.com/premium-vector/flat-tiny-study-finance-persons-concept_132971-183.jpg?ga=GA1.1.1383932092.1705766465&semt=ais_siglip" alt="Avatar">
+                <h2 id="step-title">Educational Milestones</h2>
+                <p id="step-description">Let’s capture your educational background to complete your profile.</p>
+                <button id="info-btn" class="info-btn">
+                    <span>&#8250;</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Education</h2>
+            <div id="education-fields">
+                <div class="education-entry">
+                    <input class="school" type="text" placeholder="School/University" required />
+                    <div class="education-inputs">
+                        <input class="degree" type="text" placeholder="Degree" required />
+                        <input class="year" type="text" placeholder="Year (e.g., 2022)" required />
+                    </div>
+                </div>
+            </div>
+            <button type="button" id="add-more-education">Add More</button> 
+            <div class="form-buttons">
+                <button type="button" class="prev-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+    </div>
+</div>
+</div>
+
+        <!-- Step 3: Work Experience -->
+<div class="form-step" id="step-3">
+    <div class="form-container">
+        <!-- Form Info Section for Step 3 -->
+        <div class="form-info" id="form-info-3">
+            <div class="avatar" id="avatar-container">
+                <img id="avatar-image" src="https://img.freepik.com/premium-vector/remote-team-communication-moving-forward-with-gender-diversity-inclusivity_1263357-8175.jpg?ga=GA1.1.1383932092.1705766465&semt=ais_hybrid" alt="Avatar">
+                <h2 id="step-title">Your Career Journey</h2>
+                <p id="step-description">Tell us about your professional experience to strengthen your profile.</p>
+                <button id="info-btn" class="info-btn">
+                    <span>&#8250;</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Work Experience</h2>
+            <div id="experience-fields">
+                <div class="experience-entry">
+                    <input class="job-title" type="text" placeholder="Job Title" />
+                    <input class="company" type="text" placeholder="Company Name" />
+                    <input class="start-date" type="date" placeholder="Start Date" />
+                    <input class="end-date" type="date" placeholder="End Date" />
+                    <input class="responsibilities" type="text" placeholder="Responsibilities" />
+                </div>
+            </div>
+            <button type="button" id="add-more-experience">Add More</button>
+            <div class="form-buttons">
+                <button type="button" class="prev-btn">Back</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Step 4: Skills -->
+<div class="form-step" id="step-4">
+    <div class="form-container">
+        <!-- Form Info Section for Step 4 -->
+        <div class="form-info" id="form-info-4">
+            <div class="avatar" id="avatar-container">
+                <img id="avatar-image" src="https://img.freepik.com/premium-vector/professional-training-tutorials-business-courses_1200-395.jpg?ga=GA1.1.1383932092.1705766465&semt=ais_siglip" alt="Avatar">
+                <h2 id="step-title">What I Can Do</h2>
+                <p id="step-description">Showcasing the essential skills that set you apart and enhance your professional profile.</p>
+                <button id="info-btn" class="info-btn">
+                    <span>&#8250;</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Skills</h2>
+            <div id="skills-fields">
+                <input type="text" class="skills" placeholder="Comma-separated skills" required>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="prev-btn">Back</button>
+                <button type="button" id="submit-btn">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+    </form>
+   
+        <!-- Generated Resume Preview -->
+        <div id="resume" class="resume" style="display: none;">
+            <h2>Generated Resume</h2>
+                    <div id="resume-content"></div>
+                </div>
+            </div>
+</div>
 
     <script src="app.js"></script>
 </body>

@@ -1,135 +1,746 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #8d6e63; 
+/* General Styles */
+* {
+    box-sizing: border-box;
     margin: 0;
-    padding: 20px;
-    color: #2a2a2a;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
-    max-width: 900px;
-    margin: 0 auto;
-    background: #ffffff; 
-    padding: 40px;
-    border-radius: 12px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-}
-
-header {
-    text-align: center;
-    margin-bottom: 30px;
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px; 
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); 
+    border: 1px solid #e0e4e7; 
+    margin: 20px auto; 
 }
 
 h1 {
-    color: #6d4c41; 
-    font-size: 2.5rem; 
-    text-decoration-line: underline;
+  text-align: center; 
+  font-size: 2.5rem; 
+  text-transform:uppercase; 
+  color:#222; 
+  letter-spacing:1px;
+  font-family:"Playfair Display", serif; 
+  font-weight:400;
+}
+h1 span {
+    margin-top: 5px;
+    font-size: 0.9rem; 
+    color:#444; 
+    word-spacing:1px; 
+    font-weight:normal; 
+    letter-spacing:2px;
+    text-transform: uppercase; 
+    font-family:"Raleway", sans-serif; 
+    font-weight:500;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    grid-template-rows: 27px 0;
+    grid-gap: 20px;
+    align-items: center;
 }
 
-form {
-    margin-bottom: 45px;
-}
-
-fieldset {
-    border: none; 
-    margin-bottom: 20px;
-    padding: 20px; 
-    background-color: #dbd2d2;
-    border-radius: 8px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-}
-
-legend {
-    font-weight: bold;
-    font-size: 1.5rem; 
-    color: #6d4c41; 
-}
-
-label {
+h1 span:after, h1 span:before {
+    content: " ";
     display: block;
-    margin-bottom: 8px;
-    color: #8d6e63; 
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    height: 5px;
+    background-color:#f8f8f8;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #909597;
-    border-radius: 6px; 
-    font-size: 1rem;
-    background-color: #ffffff; 
-    box-sizing: border-box;
+/* Form Container */
+.form-container {
+    display: flex;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 15px 8px rgba(0, 0, 0, 0.1);
 }
 
-textarea {
-    height: 100px;
-    resize: vertical; 
+/* Form Info Section */
+.form-info {
+    color: #333;
+    padding: 70px; 
+    width: 35%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
 }
 
-button {
-    width: 100%;
-    padding: 14px;
-    background: linear-gradient(120deg, #a18479, #a97746); /* Adds a gradient background */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-transform: uppercase;
+.avatar {
+    flex: 0 0 100px; 
+    text-align: center; 
+    margin-right: 20px; 
+}
+
+.avatar img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; 
+}
+
+#step-title {
+    font-size: 1.5em;
+    color: #2E2E2E ;
+    margin-bottom: 5px;
+    font-family:"Playfair Display", serif;
     font-weight: 600;
 }
 
-button:hover {
-    background: linear-gradient(45deg, #573123, #835c35); /* Darker gradient on hover */
-    transform: translateY(-3px); /* Subtle hover effect */
+#step-description {
+    font-size: 0.9em;
+    color: #fefefe;
+    font-family:"Raleway", sans-serif; 
 }
 
-.resume-output {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #8d6e63;
-    border-radius: 12px;
-    border: 1px solid #e0e0e0;
-}
-
-.resume-output h2 {
-    margin-bottom: 20px;
-    color: #837059;
-    font-size: 2rem;
-}
-
-.resume-output p {
-    margin-bottom: 12px;
-    color: #80584c;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* For the button container */
-#button {
-    display: flex;
-    flex-direction: column; /* Vertically aligns the buttons */
-    gap: 15px; /* Adds space between the buttons */
-    margin-top: 20px; /* Adds some space from the resume content */
-}
-
-/* Styles for the buttons */
-#button button {
-    display: block;
-    padding: 12px;
-    background: linear-gradient(120deg, #a18479, #a97746); /* Adds a gradient background */
+.info-btn {
+    background-color: #2e2e2e;
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
 }
 
-/* Hover effect for the gradient buttons */
-#button button:hover {
-    background: linear-gradient(45deg, #573123, #835c35); /* Darker gradient on hover */
-    transform: translateY(-2px); /* Subtle hover animation */
+.info-btn span {
+    font-size: 1.2em;
+}
+
+
+/* Progress Bar */
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 20px 0;
+}
+
+.progress-step {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    min-width: 60px;
+}
+
+.progress-indicator {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc; 
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.progress-label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #666;
+}
+
+/* Completed step styling */
+.progress-step.completed .progress-indicator {
+    background-color: #007bff; 
+}
+
+/* Completed step label styling */
+.progress-step.completed .progress-label {
+    color: #007bff; 
+}
+
+/* Lines connecting completed indicators */
+.progress-step.completed:not(:last-child):after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    width: 100%;
+    height: 5px; 
+    background-color: #007bff; 
+    transform: translateX(-50%);
+    z-index: 0; 
+}
+
+/* Lines connecting uncompleted indicators (gray) */
+.progress-step:not(.completed):after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 20px; 
+    width: 100%; 
+    height: 5px;
+    background-color: #ccc;
+    transform: translateX(-50%); 
+    z-index: 0; 
+}
+
+/* Uncompleted step styling */
+.progress-step:not(.completed) .progress-indicator {
+    background-color: #ccc; 
+}
+
+/* Form Section  */
+.form-section {
+    flex: 1; 
+    padding: 10px; 
+    
+}
+
+/* Form Steps */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+h2 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Input Fields */
+label {
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Focus styles for input fields */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="file"]:focus,
+input[type="text"]:focus,
+input[type="date"]:focus {
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+    outline: none; 
+}
+
+/* Profile Image Preview */
+#profile-preview {
+    display: block;
+    margin-top: 10px;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #4CAF50;
+}
+
+/* Education section */
+.education-entry {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px; 
+}  
+.education-inputs {
+    display: flex;
+    gap: 15px; 
+}
+
+input.school {
+    width: 100%; 
+    padding: 12px 15px;
+}
+
+input.degree,
+input.year {
+    flex: 0 1 150px; 
+    padding: 12px 15px;
+}
+
+
+/* Work Experience Section */
+.experience-entry {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.job-title,
+.company {
+    flex: 1 1 100%; 
+}
+
+.start-date,
+.end-date {
+    flex: 1 1 48%; 
+}
+
+.responsibilities {
+    flex: 1 1 100%; 
+}
+
+
+  /* Skills as bullet list */
+  #skills-fields {
+    list-style-type: none; 
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+
+/* Add More Button */
+#add-more-education, #add-more-experience {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+#add-more-education:hover, #add-more-experience:hover {
+    background-color: #44844c;
+}
+
+/* Form Navigation Buttons */
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Base Button Styling */
+button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5em 1em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Edit Button */
+.edit-btn {
+    background-color: #f3fd2f; 
+}
+
+.edit-btn:hover {
+    background-color: #adadad;
+}
+
+/* Delete Button */
+.dlt-btn {
+    background-color: #f44336; 
+}
+
+.dlt-btn:hover {
+    background-color: #e57373;
+}
+
+/* Save Button */
+.save-btn {
+    background-color: #2196f3; 
+}
+
+.save-btn:hover {
+    background-color: #42a5f5;
+}
+
+/* Icon Styling */
+button::before {
+    font-family: 'Material Icons';
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Icon Content for each Button */
+.edit-btn::before {
+    content: 'edit';
+}
+
+.dlt-btn::before {
+    content: 'delete';
+}
+
+.save-btn::before {
+    content: 'save';
+}
+
+/* Hover Effect: Icon Slides Slightly */
+button:hover::before {
+    transform: translateX(-4px);
+}
+
+/* Active Button State for Tactile Feedback */
+button:active {
+    transform: scale(0.98);
+}
+
+/* next button */
+.next-btn {
+    background-color: #2e2e2e;
+}
+
+.next-btn:hover {
+    background-color: #161616;
+    opacity: 0.9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* previous button */
+.prev-btn {
+    background-color: #f44336;
+}
+
+.prev-btn:hover {
+    background-color: #e53935;
+    opacity: 0.9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* submit button */
+#submit-btn {
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 10px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+#submit-btn :focus {
+  text-decoration: none;
+}
+
+#submit-btn:hover {
+  text-decoration: none;
+}
+
+#submit-btn :active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+#submit-btn:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+/* print, download, share buttons */
+.print-button,
+.download-link,
+.share-button {
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    margin: 5px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: 0.5s;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    cursor: pointer;
+}
+
+/* Specific Button Colors */
+.print-button {
+    background-color: #f39c12;
+}
+
+.download-link {
+    background-color: #007bff;
+}
+
+.share-button {
+    background-color: #fd3434;
+}
+
+/* Hover Effect for Button Colors */
+.print-button:hover {
+    background-color: #e67e22;
+    letter-spacing: 3px;
+}
+
+.download-link:hover {
+    background-color: #0056b3;
+    letter-spacing: 3px;
+}
+
+.share-button:hover {
+    background-color: #b92929;
+    letter-spacing: 3px;
+}
+
+ 
+
+/* form background color */
+#form-info-1{
+    background-color: #F3C623;
+}
+
+#form-info-2{
+    background-color: #605678;
+}
+
+#form-info-3{
+    background-color: #AB886D;
+}
+
+#form-info-4{
+    background-color: #88C273;
+}
+
+/* Generated resume container */
+#resume {
+    display: none;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+#resume h2 {
+    text-align: center;
+    color: #007bff;
+    font-size: 2rem;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Header with contact info aligned to the right */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Right-aligned contact information styling */
+.contact-info {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1;
+}
+.header h3 {
+    text-align: center; 
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: #333;
+    font-family: "Raleway", sans-serif; 
+}
+
+#resume-output p {
+    font-size: 1rem;
+    text-align: center;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-family: "Raleway", sans-serif; 
+}
+
+/* Profile picture styling */
+#resume-output img {
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    max-width: 170px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Section headers with stylized underline */
+#resume-output h4 {
+    font-size: 1.3rem;
+    color: #2a7bff;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 5px;
+    font-family: "Raleway", sans-serif; 
+}
+
+#resume-output h4::after {
+    content: "";
+    width:30px;
+    height: 5px;
+    background: #2a7bff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+/* Skills list styling */
+.skills-list {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 8px;
+    padding-left: 25px;
+    position: relative;
+    font-weight: 600;
+}
+
+.skills-list li::before {
+    content: "•"; /* Custom bullet */
+    color: #2a7bff; /* Bullet color */
+    position: absolute;
+    left: 0;
+    font-size: 1.7rem;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#profile-picture-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    font-size: 14px;
+}
+
+/* Form Section for Smaller Screens */
+@media (max-width: 768px) {
+    .form-info {
+        padding: 40px; /* Reduce padding on smaller screens */
+        width: 100%; /* Full width for better display */
+    }
+
+    .form-container {
+        flex-direction: column; /* Stack form and info sections */
+    }
+
+    .avatar img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #resume h2 {
+        font-size: 1.5rem;
+    }
+
+    #resume-content h4 {
+        font-size: 1.1rem;
+    }
+
+    #resume-content p {
+        font-size: 0.85rem;
+    }
+    
+    #submit-btn{
+      padding: 12px 50px;
+    }
+  }
+
+
+/* Adjustments for Mobile Screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .container, .form-info {
+        padding: 15px;
+    }
+
+    .progress-indicator {
+        width: 30px;
+        height: 30px;
+    }
+
+    .progress-label, #resume-content p {
+        font-size: 0.8rem;
+    }
+
+    .form-info {
+        padding: 20px;
+    }
+
+    /* Form Buttons */
+    .form-buttons button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
